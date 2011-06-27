@@ -1,7 +1,7 @@
 require 'rspec'
 
 # Local
-require_relative '../lib/mobme_infrastructure_rpc'
+require_relative '../lib/mobme-infrastructure-rpc'
 
 module MobME::Infrastructure::RPC
   describe Runner do
