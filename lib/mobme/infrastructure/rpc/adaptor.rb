@@ -1,5 +1,5 @@
-module MobME::Infrastructure
-  class RPCAdaptor
+module MobME::Infrastructure::RPC
+  class Adaptor
     def initialize(service_object)
       @service_object = service_object
     end

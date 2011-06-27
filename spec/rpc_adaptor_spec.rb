@@ -2,10 +2,10 @@
 require 'rspec'
 
 # Local
-require_relative '../lib/mobme_infrastructure_rpc_runner'
+require_relative '../lib/mobme_infrastructure_rpc'
 
-module MobME::Infrastructure
-  describe RPCAdaptor do
+module MobME::Infrastructure::RPC
+  describe Adaptor do
     let(:dummy_service_object) { double "DummyService" }
     let(:dummy_server) { double(RPC::Server).as_null_object }
 
@@ -13,11 +13,11 @@ module MobME::Infrastructure
       RPC::Server.stub(:new).and_return(dummy_server)
     end
 
-    subject { RPCAdaptor.new dummy_service_object }
+    subject { Adaptor.new dummy_service_object }
 
     it "accepts service object" do
-      RPCAdaptor.should respond_to(:new).with(1).argument
-      RPCAdaptor.new dummy_service_object
+      Adaptor.should respond_to(:new).with(1).argument
+      Adaptor.new dummy_service_object
     end
 
     it { should respond_to(:server).with(0).arguments }
