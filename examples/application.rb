@@ -1,4 +1,7 @@
-class Application
+class Application < MobME::Infrastructure::RPC::Base
+
+  @service_name = "mobme.infrastructure.rpc.test"
+
   def server_timestamp
     Time.now.to_i
   end
@@ -8,6 +11,6 @@ class Application
   end
 
   def method_missing(name, *args)
-    "[SERVER] received method #{name} with #{args.inspect}"
+    logger.err "[SERVER] received method #{name} with #{args.inspect}"
   end
 end
