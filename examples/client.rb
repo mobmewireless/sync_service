@@ -4,6 +4,7 @@
 $LOAD_PATH.unshift File.expand_path("../../../lib", __FILE__)
 
 require "rpc"
+require "mobme-infrastructure-rpc"
 
 RPC.logging = true
 
@@ -18,7 +19,7 @@ puts "Method missing works: #{client + 1}"
 # Synchronous error handling.
 begin
   client.buggy_method
-rescue Exception => exception
+rescue MobME::Infrastructure::RPC::Error => exception
   STDERR.puts "EXCEPTION CAUGHT: #{exception.inspect}"
 end
 

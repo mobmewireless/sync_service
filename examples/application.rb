@@ -7,7 +7,7 @@ class Application < MobME::Infrastructure::RPC::Base
   end
 
   def buggy_method
-    raise "This exception is expected."
+    raise MobME::Infrastructure::RPC::Error, "This exception is expected."
   end
 
   def method_missing(name, *args)
