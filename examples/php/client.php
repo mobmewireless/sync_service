@@ -9,13 +9,12 @@ echo 'Server timestamp is '. $client->server_timestamp() . "\n";
 echo 'Method missing works: ' . $client->plus(1) . "\n";
 
 // Synchronous error handling.
-
 try {
 	$client->buggy_method();
   //echo 'Your name is <i>'.$myExample->giveMeSomeData('name').'</i><br />'."\n";
 	//$myExample->changeYourState('I am using this function from the network');
 	//echo 'Your status request has been accepted<br />'."\n";
 } catch (Exception $e) {
-	echo 'EXCEPTION CAUGHT:' . nl2br($e->getMessage()) . "\n";
+	echo 'EXCEPTION CAUGHT: ' . nl2br($e->getMessage()) . "\n";
 }
 ?>

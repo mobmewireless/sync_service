@@ -1,0 +1,5 @@
+Python client requires the python-jsonrpc library.
+
+$ svn checkout http://svn.json-rpc.org/trunk/python-jsonrpc
+$ cd python-jsonrpc
+$ sudo python setup.py install
