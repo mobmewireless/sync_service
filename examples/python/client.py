@@ -11,6 +11,6 @@ print 'Method missing works: ' + client.plus(1)
 # Synchronous error handling.
 try:
   client.buggy_method()
-except Exception as e:
-  print 'EXCEPTION CAUGHT: ' + e.message
+except Exception, e:
+  print 'EXCEPTION CAUGHT: ' + e.error['message']
   
