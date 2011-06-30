@@ -4,8 +4,8 @@ group :test do
   gem "rspec"
   gem "autotest"
   gem "autotest-notification"
-  gem "rcov"
   gem "rake"
+  gem 'simplecov', '>= 0.4.0', :require => false
 end
 
 gem 'rpc'

@@ -2,6 +2,7 @@
 require 'rspec'
 
 # Local
+require_relative 'spec_helper'
 require_relative '../lib/mobme-infrastructure-rpc'
 
 module MobME::Infrastructure::RPC
