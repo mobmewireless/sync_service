@@ -1,9 +1,6 @@
 # Standard
 require 'syslog'
 
-# Bundler
-require 'bundler/setup'
-
 # Gems
 require "rack/request"
 require 'rpc'
