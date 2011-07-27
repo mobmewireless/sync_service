@@ -3,4 +3,4 @@ require 'simplecov-rcov'
 
 SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
 
-SimpleCov.start
+SimpleCov.start { add_filter 'vendor' }
