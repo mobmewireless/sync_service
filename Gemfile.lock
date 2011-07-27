@@ -23,6 +23,7 @@ GEM
     simplecov (0.4.2)
       simplecov-html (~> 0.4.4)
     simplecov-html (0.4.5)
+    simplecov-rcov (0.2.0)
     thin (1.2.11)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -39,4 +40,5 @@ DEPENDENCIES
   rpc
   rspec
   simplecov (>= 0.4.0)
+  simplecov-rcov
   thin
