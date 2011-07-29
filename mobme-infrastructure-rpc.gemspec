@@ -14,7 +14,13 @@ Gem::Specification.new do |s|
   s.description = %q{RPC is a library that you can use to expose other service classes using JSON-RPC 2.0 specification.}
 
   s.required_rubygems_version = ">= 1.6.2"
+
   s.add_development_dependency "rspec"
+  s.add_development_dependency "autotest"
+  s.add_development_dependency "autotest-notification"
+  s.add_development_dependency "rake"
+  s.add_development_dependency "simplecov", '>= 0.4.0'
+  s.add_development_dependency "simplecov-rcov"
 
   s.add_dependency "rpc", "= 0.2"
   s.add_dependency "rack", "= 1.3.0"
