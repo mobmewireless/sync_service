@@ -23,8 +23,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency "simplecov-rcov"
 
   s.add_dependency "rpc", "= 0.2"
-  s.add_dependency "rack", "= 1.3.0"
-  s.add_dependency "thin", "= 1.2.11"
+  s.add_dependency "rack"
+  s.add_dependency "thin"
 
   s.files              = `git ls-files`.split("\n") - ["Gemfile.lock", ".rvmrc"]
   s.test_files         = `git ls-files -- {spec}/*`.split("\n")
