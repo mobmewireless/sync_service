@@ -1,1 +1,9 @@
+vendor/
+.bundle/
+coverage/
+spec/reports
+*.log
+.yardoc
+*.gem
+
 Gemfile.lock

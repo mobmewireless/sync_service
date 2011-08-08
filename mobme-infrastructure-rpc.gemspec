@@ -16,11 +16,14 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = ">= 1.6.2"
 
   s.add_development_dependency "rspec"
-  s.add_development_dependency "autotest"
-  s.add_development_dependency "autotest-notification"
   s.add_development_dependency "rake"
-  s.add_development_dependency "simplecov", '>= 0.4.0'
+  s.add_development_dependency "guard"
+  s.add_development_dependency "guard-rspec"
+  s.add_development_dependency "simplecov"
   s.add_development_dependency "simplecov-rcov"
+  s.add_development_dependency "flog"
+  s.add_development_dependency "yard"
+  s.add_development_dependency "ci_reporter"
 
   s.add_dependency "rpc", "= 0.3"
   s.add_dependency "rack"
