@@ -1,7 +1,7 @@
 module MobME
   module Infrastructure
     module RPC
-      VERSION = '0.0.7'
+      VERSION = '0.0.8'
       class Adaptor; end
       class Runner; end
       class Base; end
