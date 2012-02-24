@@ -3,9 +3,9 @@ require "rspec"
 
 # Local
 require_relative 'spec_helper'
-require_relative '../lib/async_service'
+require_relative '../lib/sync_service'
 
-module MobME::Infrastructure::RPC
+module SyncService
   describe Error do
     it "inherits from StandardError" do
       Error.superclass.should == StandardError

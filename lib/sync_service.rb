@@ -3,7 +3,6 @@ require 'syslog'
 
 # Gems
 require "rack/request"
-require 'thin'
 
 # Bundled RPC
 $:.push(Pathname.new(File.dirname(__FILE__)).join('rpc', 'lib').to_path)

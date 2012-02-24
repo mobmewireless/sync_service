@@ -1,11 +1,12 @@
 # Gems
 require 'rspec'
+require 'thin'
 
 # Local
 require_relative 'spec_helper'
-require_relative '../lib/async_service'
+require_relative '../lib/sync_service'
 
-module MobME::Infrastructure::RPC
+module SyncService
   describe Runner do
     it "should respond to class method 'run' with 4 arguments" do
       Runner.should respond_to(:start).with(4).arguments
@@ -21,11 +22,6 @@ module MobME::Infrastructure::RPC
         Thin::Server.should_receive(:start).with('0.0.0.0', 8080)
         Runner.start(application, '0.0.0.0', 8080, '/application')
       end
-
-#      it "uses Rack::CommonLogger" do
-#        RPCRunner.should_receive(:use)
-#        RPCRunner.start(application, '0.0.0.0', 8080, '/application')
-#      end
     end
   end
 end

@@ -3,9 +3,9 @@ require 'rspec'
 
 # Local
 require_relative 'spec_helper'
-require_relative '../lib/async_service'
+require_relative '../lib/sync_service'
 
-module MobME::Infrastructure::RPC
+module SyncService
   describe Adaptor do
     let(:dummy_service_object) { double "DummyService" }
     let(:dummy_server) { double(RPC::Server).as_null_object }
