@@ -1,7 +1,7 @@
-require 'mobme-infrastructure-rpc'
+require 'sync_service'
 
-require_relative 'application'
+require Pathname.new(File.dirname(__FILE__)).join('application')
 
 map("/test_application") do
-  run MobME::Infrastructure::RPC::Adaptor.new(Application.new)
+  run SyncService::Adaptor.new(Application.new)
 end

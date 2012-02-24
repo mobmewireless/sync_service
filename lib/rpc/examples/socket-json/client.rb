@@ -1,8 +1,15 @@
-require "sync_service"
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+$LOAD_PATH.unshift File.expand_path("../../../lib", __FILE__)
+
+require "rpc"
 
 RPC.logging = true
 
-client = SyncService::Client.setup("http://127.0.0.1:8080/test_application")
+# TODO: the second argument could be +/- guessed (amqp -> amqp adapter, ip -> socket)
+# TODO: IP isn't any existing URI scheme, on the other hand there are so many not existing URI schemes today that I don't think it matters (rsync://, git://, javascript:// and I could go on)
+client = RPC::Client.setup("ip://localhost:2200", RPC::Clients::Socket)
 
 # Get result of an existing method.
 puts "Server timestamp is #{client.server_timestamp}"
@@ -13,13 +20,13 @@ puts "Method missing works: #{client + 1}"
 # Synchronous error handling.
 begin
   client.buggy_method
-rescue MobME::Infrastructure::RPC::Error => exception
+rescue Exception => exception
   STDERR.puts "EXCEPTION CAUGHT: #{exception.inspect}"
 end
 
 # Notification isn't supported, because HTTP works in
 # request/response mode, so it does behave in the same
-# manner as rpc via method_missing. Sense of this is
+# manner as RPC via method_missing. Sense of this is
 # only to check, that it won't blow up.
 puts "Sending a notification ..."
 client.notification(:log, "Some shit.")

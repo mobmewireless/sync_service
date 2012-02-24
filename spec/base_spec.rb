@@ -3,7 +3,7 @@ require 'rspec'
 
 # Local
 require_relative 'spec_helper'
-require_relative '../lib/mobme-infrastructure-rpc'
+require_relative '../lib/async_service'
 
 module MobME::Infrastructure::RPC
   class DummyRPCService < Base

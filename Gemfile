@@ -12,5 +12,3 @@ group :linux do
   gem "rb-inotify"
   gem "libnotify"
 end
-
-gem 'rpc', :git => "git://github.com/harigopal/rpc.git"

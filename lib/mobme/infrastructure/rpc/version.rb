@@ -9,3 +9,6 @@ module MobME
     end
   end
 end
+
+# Alias it
+SyncService = MobME::Infrastructure::RPC

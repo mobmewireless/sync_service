@@ -4,14 +4,14 @@ $:.unshift lib unless $:.include?(lib)
 require 'mobme/infrastructure/rpc/version'
 
 Gem::Specification.new do |s|
-  s.name        = "mobme-infrastructure-rpc"
-  s.version     = MobME::Infrastructure::RPC::VERSION
+  s.name        = "sync_service"
+  s.version     = SyncService::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["MobME"]
   s.email       = ["engineering@mobme.in"]
   s.homepage    = "http://mobme.in/"
-  s.summary     = %q{Generic wrapper for RPC-based services.}
-  s.description = %q{RPC is a library that you can use to expose other service classes using JSON-RPC 2.0 specification.}
+  s.summary     = %q{Generic wrapper for a synchronous service.}
+  s.description = %q{sync_service is a library to create synchronous SOA daemons. It has wrappers around both the client and server end.}
 
   s.add_development_dependency "rspec"
   s.add_development_dependency "rake"
@@ -22,11 +22,10 @@ Gem::Specification.new do |s|
   s.add_development_dependency "flog"
   s.add_development_dependency "yard"
   s.add_development_dependency "ci_reporter"
+  s.add_development_dependency "thin"
 
-  s.add_dependency "rpc", "= 0.3"
   s.add_dependency "rack"
-  s.add_dependency "thin"
-
+  
   s.files              = `git ls-files`.split("\n") - ["Gemfile.lock", ".rvmrc"]
   s.test_files         = `git ls-files -- {spec}/*`.split("\n")
   s.require_paths      = ["lib"]

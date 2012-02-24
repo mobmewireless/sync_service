@@ -1,0 +1,7 @@
+h1. About
+
+Generic RPC library for Ruby. Currently it supports JSON-RPC over HTTP, support for AMQP and Redis will follow soon.
+
+h1. Usage
+
+See examples.
