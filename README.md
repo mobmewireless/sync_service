@@ -2,9 +2,17 @@
 
 sync_service is a library to create synchronous SOA daemons. It's built on top of the JSON/RPC protocol and can be deployed anywhere you deploy a Rack application.
 
+## Install
+
+Requires ruby-1.9.3p0.
+
+Then do:
+
+    $ gem install sync_service
+
 ## Hosting a Service
 
-A service is just any Ruby object that descends from SyncService::Base. Any public method in the object is automatically exposed via SOA.
+A service is just any Ruby object that descends from <code>SyncService::Base</code>. Any public method in the object is automatically exposed via SOA.
 
 
     require "sync_service"
@@ -25,7 +33,7 @@ A service is just any Ruby object that descends from SyncService::Base. Any publ
       end
     end
 
-To expose the Application, you can either create a standalone server and run it via SyncService::Runner, or:
+To expose the Application, you can either create a standalone server and run it via <code>SyncService::Runner</code>:
 
     require 'sync_service'
     require_relative 'application'
@@ -43,7 +51,7 @@ or make a simple config.ru via SyncService::Adaptor:
 
 ## Consuming a Service
 
-To consume services, use SyncService::Client:
+To consume services, use <code>SyncService::Client</code>:
 
     require "sync_service"
     RPC.logging = true
@@ -55,15 +63,4 @@ To consume services, use SyncService::Client:
 
 
 You can see the complete example in the examples/ folder.
-
-## Install
-
-Requires ruby-1.9.3p0.
-
-Then do:
-
-    $ gem install bundler
-    $ bundle install --path vendor [--without linux] [--without osx]
-    $ bundle package
-
 
