@@ -23,9 +23,7 @@ module RPC
         @klass = Net.const_get(@uri.scheme.upcase)
 
         @client = PersistentHTTP.new(
-          name: 'HTTP Client',
-          pool_size: 2,
-          warn_timeout: 0.25,
+          pool_size: 5,
           force_retry: true,
           url: @uri
         )
