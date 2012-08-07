@@ -7,8 +7,8 @@ client = SyncService::Client.setup("http://127.0.0.1:8080/test_application")
 # Get result of an existing method.
 puts "Server timestamp is #{client.server_timestamp}"
 
-# Get result of a non-existing method via method_missing.
-puts "Method missing works: #{client + 1}"
+# Missing methods raise an error..
+puts "Method missing works: #{client + 1}" rescue nil
 
 # Synchronous error handling.
 begin
