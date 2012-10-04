@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require "uri"
+require 'persistent_http'
 
 # Note that we support only HTTP POST. JSON-RPC can be done
 # via HTTP GET as well, but since HTTP POST is the preferred
@@ -19,32 +20,25 @@ module RPC
 
       def initialize(uri)
         @uri = URI.parse(uri)
-        klass = Net.const_get(@uri.scheme.upcase)
-        @client = klass.new(@uri.host, @uri.port)
-      end
+        @klass = Net.const_get(@uri.scheme.upcase)
 
-      def connect
-        @client.start
-      end
-
-      def disconnect
-        @client.finish
+        @client = PersistentHTTP.new(
+          pool_size: 5,
+          force_retry: true,
+          url: @uri
+        )
       end
 
       def run(&block)
-        self.connect
         block.call
-        self.disconnect
       end
 
       def send(data)
         path = @uri.path.empty? ? "/" : @uri.path
-
-        begin
-          @client.post(path, data, HEADERS).body
-        rescue EOFError
-          retry
-        end
+        request = @klass::Post.new path
+        request.body = data
+        response = @client.request(request)
+        response.body
       end
 
       def async?

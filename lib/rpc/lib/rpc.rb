@@ -75,8 +75,6 @@ module RPC
         @client.run do
           block.call(self)
         end
-      else
-        @client.connect
       end
     end
 

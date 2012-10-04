@@ -10,8 +10,4 @@ class Application < SyncService::Base
   def buggy_method
     raise MobME::Infrastructure::RPC::Error, "This exception is expected."
   end
-
-  def method_missing(name, *args)
-    logger.err "[SERVER] received method #{name} with #{args.inspect}"
-  end
 end

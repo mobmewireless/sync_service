@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "thin"
 
   s.add_dependency "rack"
+  s.add_dependency "persistent_http"
   
   s.files              = `git ls-files`.split("\n") - ["Gemfile.lock", ".rvmrc"]
   s.test_files         = `git ls-files -- {spec}/*`.split("\n")
