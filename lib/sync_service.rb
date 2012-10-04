@@ -1,5 +1,6 @@
 # Standard
 require 'syslog'
+require 'pathname'
 
 # Gems
 require "rack/request"
