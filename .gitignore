@@ -5,5 +5,5 @@ spec/reports
 *.log
 .yardoc
 *.gem
-
+.bundle/
 Gemfile.lock
